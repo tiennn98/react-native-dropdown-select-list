@@ -8,6 +8,7 @@ import {
   ScrollView,
   Animated,
   TextInput,
+  Platform,
 } from "react-native";
 
 import { SelectListProps } from "..";
@@ -104,7 +105,7 @@ const SelectList: React.FC<SelectListProps> = ({
   }, [dropdownShown]);
 
   return (
-    <View>
+    <View style={Platform.OS === "android" && { marginHorizontal: 20 }}>
       {dropdown && search ? (
         <View style={[styles.wrapper, boxStyles]}>
           <View style={{ flexDirection: "row", alignItems: "center", flex: 1 }}>
