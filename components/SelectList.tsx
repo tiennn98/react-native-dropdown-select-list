@@ -105,7 +105,7 @@ const SelectList: React.FC<SelectListProps> = ({
   }, [dropdownShown]);
 
   return (
-    <View style={Platform.OS === "android" && { marginHorizontal: 20 }}>
+    <View style={{ marginHorizontal: 50 }}>
       {dropdown && search ? (
         <View style={[styles.wrapper, boxStyles]}>
           <View style={{ flexDirection: "row", alignItems: "center", flex: 1 }}>
