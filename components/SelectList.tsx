@@ -8,7 +8,6 @@ import {
   ScrollView,
   Animated,
   TextInput,
-  Platform,
 } from "react-native";
 
 import { SelectListProps } from "..";
@@ -105,7 +104,7 @@ const SelectList: React.FC<SelectListProps> = ({
   }, [dropdownShown]);
 
   return (
-    <View style={{ marginHorizontal: 50 }}>
+    <View>
       {dropdown && search ? (
         <View style={[styles.wrapper, boxStyles]}>
           <View style={{ flexDirection: "row", alignItems: "center", flex: 1 }}>
@@ -129,10 +128,7 @@ const SelectList: React.FC<SelectListProps> = ({
                 });
                 setFilteredData(result);
               }}
-              style={[
-                { padding: 0, height: 20, flex: 1, fontFamily },
-                inputStyles,
-              ]}
+              style={[{ flex: 1, fontFamily }, inputStyles]}
             />
             <TouchableOpacity onPress={() => slideup()}>
               {!closeicon ? (
@@ -266,7 +262,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     borderColor: "gray",
-    paddingHorizontal: 20,
+    marginHorizontal: 20,
     paddingVertical: 12,
     flexDirection: "row",
     justifyContent: "space-between",
